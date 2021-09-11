@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Geo2Names</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+  <main class="container mt-3">
+    <div class="row">
+      <h4 class="display-4 mt-4 mb-4">Результат поиска по именам {{name1}}, {{name2}}</h4>
+      <div class="col-6">
+        <div class="card mb-4"  style="background: #fff7e8">
+          <div class="card-body mx-1">
+            <h6 class="my-3">ID: {{city1[0]}}</h6>
+            <h6 class="my-3">Название: {{city1[1]}}</h6>
+            <h6 class="my-3">ASCII-Название: {{city1[2]}}</h6>
+            <h6 class="my-3">Альтернативные Названия: {{city1[3] or '-'}}</h6>
+            <h6 class="my-3">Широта: {{city1[4] or '-'}}</h6>
+            <h6 class="my-3">Долгота: {{city1[5] or '-'}}</h6>
+            <h6 class="my-3">Feature class: {{city1[6] or '-'}}</h6>
+            <h6 class="my-3">Feature code: {{city1[7] or '-'}}</h6>
+            <h6 class="my-3">Country code: {{city1[8] or '-'}}</h6>
+            <h6 class="my-3">cc2: {{city1[9] or '-'}}</h6>
+            <h6 class="my-3">admin1 code: {{city1[10] or '-'}}</h6>
+            <h6 class="my-3">admin2 code: {{city1[11] or '-'}}</h6>
+            <h6 class="my-3">admin3 code: {{city1[12] or '-'}}</h6>
+            <h6 class="my-3">admin4 code: {{city1[13] or '-'}}</h6>
+            <h6 class="my-3">Население: {{city1[14] or '-'}}</h6>
+            <h6 class="my-3">Высота: {{city1[15] or '-'}}</h6>
+            <h6 class="my-3">dem: {{city1[16] or '-'}}</h6>
+            <h6 class="my-3">Временная зона: {{city1[17] or '-'}}</h6>
+            <h6 class="my-3">Время последнего обновления: {{city1[18] or '-'}}</h6>
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="card mb-4"  style="background: #fff7e8">
+          <div class="card-body mx-1">
+            <h6 class="my-3">ID: {{city2[0]}}</h6>
+            <h6 class="my-3">Название: {{city2[1]}}</h6>
+            <h6 class="my-3">ASCII-Название: {{city2[2]}}</h6>
+            <h6 class="my-3">Альтернативные Названия: {{city2[3] or '-'}}</h6>
+            <h6 class="my-3">Широта: {{city2[4] or '-'}}</h6>
+            <h6 class="my-3">Долгота: {{city2[5] or '-'}}</h6>
+            <h6 class="my-3">Feature class: {{city2[6] or '-'}}</h6>
+            <h6 class="my-3">Feature code: {{city2[7] or '-'}}</h6>
+            <h6 class="my-3">Country code: {{city2[8] or '-'}}</h6>
+            <h6 class="my-3">cc2: {{city2[9] or '-'}}</h6>
+            <h6 class="my-3">admin1 code: {{city2[10] or '-'}}</h6>
+            <h6 class="my-3">admin2 code: {{city2[11] or '-'}}</h6>
+            <h6 class="my-3">admin3 code: {{city2[12] or '-'}}</h6>
+            <h6 class="my-3">admin4 code: {{city2[13] or '-'}}</h6>
+            <h6 class="my-3">Население: {{city2[14] or '-'}}</h6>
+            <h6 class="my-3">Высота: {{city2[15] or '-'}}</h6>
+            <h6 class="my-3">dem: {{city2[16] or '-'}}</h6>
+            <h6 class="my-3">Временная зона: {{city2[17] or '-'}}</h6>
+            <h6 class="my-3">Время последнего обновления: {{city2[18] or '-'}}</h6>
+          </div>
+        </div>
+      </div>
+   </div>
+  <div class="card pb-1 mb-3"  style="background: #fff7e8">
+    <h5 class="mx-3 my-2">Севернее находится: {{north_city_name}}</h5>
+    <h5 class="mx-3 my-2">Временная зона у этих городов: {{timezone}}</h5>
+  </div>
+  <a href="/" class="btn btn-dark btn-lg my-2">На главную</a>
+  </main>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

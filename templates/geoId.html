@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <title>GeoNameId</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+  <main class="container mt-3">
+    <div class="row">
+      <h4 class="display-4 mt-4 mb-4">Результат поиска по ID {{id}}</h4>
+      <div class="col-12">
+        <div class="card mb-4"  style="background: #fff7e8">
+          <div class="card-body mx-1">
+            <div class="row">
+              <div class="col-6">
+                <h5 class="my-3">ID: {{city[0]}}</h5>
+                <h5 class="my-3">Название: {{city[1]}}</h5>
+                <h5 class="my-3">ASCII-Название: {{city[2]}}</h5>
+                <h5 class="my-3">Альтернативные Названия: {{city[3] or '-'}}</h5>
+                <h5 class="my-3">Широта: {{city[4] or '-'}}</h5>
+                <h5 class="my-3">Долгота: {{city[5] or '-'}}</h5>
+                <h5 class="my-3">Feature class: {{city[6] or '-'}}</h5>
+                <h5 class="my-3">Feature code: {{city[7] or '-'}}</h5>
+                <h5 class="my-3">Country code: {{city[8] or '-'}}</h5>
+              </div>
+              <div class="col-6">
+                <h5 class="my-3">cc2: {{city[9] or '-'}}</h5>
+                <h5 class="my-3">admin1 code: {{city[10] or '-'}}</h5>
+                <h5 class="my-3">admin2 code: {{city[11] or '-'}}</h5>
+                <h5 class="my-3">admin3 code: {{city[12] or '-'}}</h5>
+                <h5 class="my-3">admin4 code: {{city[13] or '-'}}</h5>
+                <h5 class="my-3">Население: {{city[14] or '-'}}</h5>
+                <h5 class="my-3">Высота: {{city[15] or '-'}}</h5>
+                <h5 class="my-3">dem: {{city[16] or '-'}}</h5>
+                <h5 class="my-3">Временная зона: {{city[17] or '-'}}</h5>
+                <h5 class="my-3">Время последнего обновления: {{city[18] or '-'}}</h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <a href="javascript:history.back()" class="btn btn-dark btn-lg my-2">Вернуться назад</a>
+      </div>
+      <div class="col-6">
+        <a href="/" class="btn btn-dark btn-lg my-2">На главную</a>
+      </div>
+   </div>
+  </main>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

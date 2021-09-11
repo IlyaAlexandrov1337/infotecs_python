@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <title>GeoNames Server</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+  <main class="container mt-3">
+	<section class="jumbotron card px-3 text-left mt-4" style="background: #fff7e8; background-position: center center">
+      <h1 class="display-5">Тестовое задание для стажера на позицию <br> «Программист на языке Python»</h1>
+      <p class="lead">Выполнил Александров Илья</p>
+    </section>
+    <div class="row mt-4">
+      <div class="col-4">
+        <div class="card mb-4" style="background: #d6dfff">
+            <form class="card-body mx-2" method="POST">
+              <p style="text-align: center"><strong>GeoNameId (1-й метод)</strong></p>
+              {{firstForm.csrf_token() }}
+
+              {{firstForm.geoId.label(class_="mb-1 mt-2")}}
+
+              {{firstForm.geoId(class_="form-control")}}
+
+              {{firstForm.geoIdSubmit(class_="btn btn-dark btn-block mt-4")}}
+            </form>
+          <p class="card-body mx-3">{{msg_error1}}</p>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="card mb-4"  style="background: #d8ffe8">        
+          <form class="card-body mx-2" method="POST">
+              <p style="text-align: center"><strong>GeoPages (2-й метод)</strong></p>
+              {{secondForm.csrf_token() }}
+
+              {{secondForm.avgGeoCount.label(class_="mb-1 mt-2")}}
+
+              {{secondForm.avgGeoCount(class_="form-control")}}
+
+              {{secondForm.pageGeoCount.label(class_="mb-1 mt-2")}}
+
+              {{secondForm.pageGeoCount(class_="form-control")}}
+
+              {{secondForm.geoIndex.label(class_="mb-1 mt-2")}}
+
+              {{secondForm.geoIndex(class_="form-control")}}
+
+              {{secondForm.geoPagesSubmit(class_="btn btn-dark btn-block mt-4")}}
+            </form>
+          <p class="card-body mx-3">{{msg_error2}}</p>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="card mb-4" style="background: #ffdbdb"> 
+          <form class="card-body mx-3" method="POST">
+              <p style="text-align: center"><strong>Geo2Names (3-й метод)</strong></p>
+              {{thirdForm.csrf_token() }}
+
+              {{thirdForm.geoName1.label(class_="mb-1 mt-2")}}
+
+              {{thirdForm.geoName1(class_="form-control mb-1 mt-2")}}
+
+              {{thirdForm.geoName2.label(class_="mb-1 mt-2")}}
+
+              {{thirdForm.geoName2(class_="form-control mb-1 mt-2")}}
+
+              {{thirdForm.geo2NamesSubmit(class_="btn btn-dark btn-block mt-4")}}
+          </form>
+          <p class="card-body mx-3">{{msg_error3}}</p>
+        </div>
+     </div>
+    <div class="col-12">
+        <div class="card mb-4" style="background: #d8aeff">
+            <form class="card-body mx-3" method="POST">
+              <p style="text-align: center"><strong>Prompt (дополнительный метод)</strong></p>
+                {{fourthForm.csrf_token() }}
+
+                {{fourthForm.Prefix.label(class_="mb-1 mt-2")}}
+
+                {{fourthForm.Prefix(class_="form-control")}}
+
+                {{fourthForm.geoPromptSubmit(class_="btn btn-dark btn-block mt-4")}}
+            </form>
+        </div>
+        </div>
+     </div>
+  </main>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

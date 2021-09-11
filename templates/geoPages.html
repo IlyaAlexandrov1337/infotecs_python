@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <title>GeoPages</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+  <main class="container mt-3">
+    <div class="row">
+      <h4 class="display-4 mt-4 mb-4">Разбивка по страницам</h4>
+      {% for city in cities.values() %}
+      <div class="col-12">
+        <a href="/get_by_id/{{city[0]}}" class="card mb-4"  style="text-decoration: none; color: black; background: #fff7e8">
+          <div class="card-body mx-1">
+            <div class="row">
+              <div class="col-4">
+                <h5 class="my-3">ID: {{city[0]}}</h5>
+                <h5 class="my-3">Название: {{city[1]}}</h5>
+                <h5 class="my-3">ASCII-Название: {{city[2]}}</h5>
+              </div>
+              <div class="col-4">
+                <h5 class="my-3">Альтернативные Названия: {{city[3] or '-'}}</h5>
+                <h5 class="my-3">Широта: {{city[4] or '-'}}</h5>
+                <h5 class="my-3">Долгота: {{city[5] or '-'}}</h5>
+              </div>
+              <div class="col-4">
+                <h5 class="my-3">Население: {{city[14] or '-'}}</h5>
+                <h5 class="my-3">Высота: {{city[15] or '-'}}</h5>
+                <h5 class="my-3">Временная зона: {{city[17] or '-'}}</h5>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+      {% endfor %}
+      <nav class="col-12 my-3">
+        <ul class="pagination my-3 pagination-lg">
+          {% for page in range(page_count) %}
+          {% set path = "/pagination/avg="+avg|string+"&cities="+cities_count|string+"&index="+index|string+"&start="+(page*cities_count)|string %}
+          <li class="page-item {% if request.path == path %}active{% endif %}">
+            <a class="page-link"
+               href={{path}}>
+              {{page + 1}}
+            </a>
+          </li>
+          {% if page > 0 and not page % 15 %}
+            </ul>
+            <ul class="pagination my-2 pagination-lg">
+          {% endif %}
+          {% endfor %}
+        </ul>
+      </nav>
+      <a href="/" class="btn btn-dark btn-lg my-3">На главную</a>
+   </div>
+  </main>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
