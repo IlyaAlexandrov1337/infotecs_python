@@ -50,24 +50,6 @@ class GeoData:
                             alter_rus_data[alter_name].add(name)
                         else:
                             alter_rus_data[alter_name] = set([name])
-        with open('RU3.txt', 'r', encoding='utf-8') as f:
-            for line in f:
-                obj = line.split('\t')
-                id = int(obj[0])
-                data[id] = obj
-                name = obj[1]
-                if mapping.get(name):
-                    mapping[name].append(id)
-                else:
-                    mapping[name] = [id]
-                translit_data[to_cyrillic(name, "ru")] = name
-                alter_names = obj[3].split(",")
-                for alter_name in alter_names:
-                    if is_cyrillic(alter_name):
-                        if alter_rus_data.get(alter_name):
-                            alter_rus_data[alter_name].add(name)
-                        else:
-                            alter_rus_data[alter_name] = set([name])
         self._data = data
         self._name_to_id = mapping
         self._translit_data = translit_data
